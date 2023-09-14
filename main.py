@@ -106,7 +106,7 @@ def print_results(results):
 							tablefmt="github"))
 
 def test_compare_work():
-	work_fn1 = lambda n: 1
+	work_fn1 = lambda n: math.log(n)
 	work_fn2 = lambda n: n
 	res = compare_work(work_fn1, work_fn2)
 	print_results(res)
@@ -115,6 +115,7 @@ def test_compare_work():
 #est_compare_work(lambda n:n, lambda n: math.log(n))
 #test_compare_work(lambda n: n ** 2, lambda n: n ** 1.5)
 #test_compare_work(lambda n: n ** 0.5, lambda n: n ** 3.5)
+test_compare_work()
 
 def compare_span(span_fn1, span_fn2, sizes=[10, 20, 50, 100, 1000, 5000, 10000]):
 	"""
@@ -129,7 +130,7 @@ def compare_span(span_fn1, span_fn2, sizes=[10, 20, 50, 100, 1000, 5000, 10000])
 	result = []
 	for n in sizes:
 		# compute W(n) using current a, b, f
-		result.append(( n, span_calc(n, 2, 2, span_fn1), span_calc(n,2,2,span_fn2)))
+		result.append(( n, span_calc(n, 2, 2, span_fn1), span_calc(n, 2, 2,span_fn2)))
 	return result
 	
 
@@ -141,5 +142,6 @@ def test_compare_span():
 
 #test_compare_span(lambda n:1, lambda n:n)
 #test_compare_span(lambda n:n, lambda n: math.log(n))
+
 
 
