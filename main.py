@@ -105,14 +105,16 @@ def print_results(results):
 							floatfmt=".3f",
 							tablefmt="github"))
 
-def test_compare_work(work_fn1, work_fn2):
+def test_compare_work():
+	work_fn1 = lambda n: 1
+	work_fn2 = lambda n: n
 	res = compare_work(work_fn1, work_fn2)
 	print_results(res)
 
-test_compare_work(lambda n:1, lambda n:n)
-test_compare_work(lambda n:n, lambda n: math.log(n))
-test_compare_work(lambda n: n ** 2, lambda n: n ** 1.5)
-test_compare_work(lambda n: n ** 0.5, lambda n: n ** 3.5)
+#test_compare_work(lambda n:1, lambda n:n)
+#est_compare_work(lambda n:n, lambda n: math.log(n))
+#test_compare_work(lambda n: n ** 2, lambda n: n ** 1.5)
+#test_compare_work(lambda n: n ** 0.5, lambda n: n ** 3.5)
 
 def compare_span(span_fn1, span_fn2, sizes=[10, 20, 50, 100, 1000, 5000, 10000]):
 	"""
@@ -131,13 +133,13 @@ def compare_span(span_fn1, span_fn2, sizes=[10, 20, 50, 100, 1000, 5000, 10000])
 	return result
 	
 
-def test_compare_span(span_fn1, span_fn2):
-	#span_fn1 = lambda n: 1
-	#span_fn2 = lambda n: n
+def test_compare_span():
+	span_fn1 = lambda n: 1
+	span_fn2 = lambda n: n
 	res = compare_span(span_fn1, span_fn2)
 	print_results(res)
 
-test_compare_span(lambda n:1, lambda n:n)
-test_compare_span(lambda n:n, lambda n: math.log(n))
+#test_compare_span(lambda n:1, lambda n:n)
+#test_compare_span(lambda n:n, lambda n: math.log(n))
 
 
